@@ -3,7 +3,7 @@ class Creature {
 
     // Basic stats for each creature.
     private int baseSpeed, baseDefence, baseStrength, baseVision, age, hunger, health;
-    private String role, name;
+    private String name;
     private Creature parent;
 
     public Creature(int speed, int defence, int strength, int vision, Creature parent, String name, int health) {
@@ -18,32 +18,49 @@ class Creature {
         this.hunger = 0;
     }
 
-    public int getHealth(){
+    public int getHealth() {
         return health;
     }
 
-    public void setHealth(int newHealth){
+    public void setHealth(int newHealth) {
         this.health = newHealth;
     }
 
-    public int getStrength(){
+    public int getStrength() {
         return baseStrength;
     }
 
-    public int getSpeed(){
+    public int getSpeed() {
         return baseSpeed;
     }
 
-    public int getDefence(){
+    public int getDefence() {
         return baseDefence;
     }
 
-    public int getHunger(){
+    public int getHunger() {
         return hunger;
     }
 
+    public int getVision() {
+        return baseVision;
+    }
 
-    
+    public int getAge() {
+        return age;
+    }
+
+    public void ageIncrement(){
+        this.age += 1;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public Creature getParent(){
+        return parent;
+    }
 
 
 }
