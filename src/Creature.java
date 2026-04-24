@@ -5,8 +5,10 @@ class Creature {
     private int baseSpeed, baseDefence, baseStrength, baseVision, age, hunger, health;
     private String name;
     private Creature parent;
+    private Species species;
 
-    public Creature(int speed, int defence, int strength, int vision, Creature parent, String name, int health) {
+    public Creature(int speed, int defence, int strength, int vision, Creature parent, String name, int health, Species species) {
+        this.species = species;
         this.age = 0;
         this.name = name;
         this.baseDefence = defence;
