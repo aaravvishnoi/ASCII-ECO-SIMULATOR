@@ -74,4 +74,17 @@ class Population {
         System.out.println(species.getSpeciesName()+"|"+avg_def+"|"+avg_str+"|"+avg_vis+"|"+avg_speed);
 
     }
+
+
+    public ArrayList<Creature> getAllCreatures(){
+        return allCreatures;
+    }
+
+    public String getSpeciesName(){
+        return species.getSpeciesName();
+    }
+
+    public int getPopulationCount(){
+        return allCreatures.size();
+    }
 }
