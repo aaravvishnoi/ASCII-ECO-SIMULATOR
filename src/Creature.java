@@ -36,6 +36,10 @@ class Creature {
         return baseSpeed;
     }
 
+    public void setSpeed(int new_speed){
+        this.baseSpeed = new_speed;
+    }
+
     public int getDefence() {
         return baseDefence;
     }
