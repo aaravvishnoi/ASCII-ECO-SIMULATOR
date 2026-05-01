@@ -72,6 +72,30 @@ class Ecosystem {
         }
     }
 
+    public void survivalCheck(){
+        for (int i = 0; i < population.size(); i++) {
+            for (int j = 0; j < population.get(i).getPopulationCount(); j++) {
+                if (population.get(i).getAllCreatures().get(j).getHealth() <= 0) {
+                    population.get(i).getAllCreatures().remove(j);
+                    j--;
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public Population findPopulation(String speciesName) {
         for (int i = 0; i < population.size(); i++) {
             if (population.get(i).getSpeciesName().equals(speciesName)) {
@@ -82,4 +106,6 @@ class Ecosystem {
         return null;
 
     }
+
+
 }

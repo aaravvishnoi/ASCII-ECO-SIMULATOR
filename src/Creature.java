@@ -6,6 +6,7 @@ class Creature {
     private String name;
     private Creature parent;
     private Species species;
+    private boolean isFed;
 
     public Creature(int speed, int defence, int strength, int vision, Creature parent, String name, int health, Species species) {
         this.species = species;
@@ -18,6 +19,7 @@ class Creature {
         this.parent = parent;
         this.health = health;
         this.hunger = 0;
+        this.isFed = false;
     }
 
     public int getHealth() {
@@ -71,6 +73,7 @@ class Creature {
     public Species getSpecies(){
         return species;
     }
+
 
 
 }
