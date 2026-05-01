@@ -74,6 +74,14 @@ class Creature {
         return species;
     }
 
+    public boolean isFed(){
+        return isFed;
+    }
+
+    public void setFed(boolean fed){
+        this.isFed = fed;
+    }
+
 
 
 }

@@ -76,7 +76,7 @@ class Ecosystem {
         for (int i = 0; i < population.size(); i++) {
             for (int j = 0; j < population.get(i).getPopulationCount(); j++) {
                 if (population.get(i).getAllCreatures().get(j).getHealth() <= 0) {
-                    population.get(i).getAllCreatures().remove(j);
+                    population.get(i).getAllCreatures().cull();
                     j--;
                 }
             }
