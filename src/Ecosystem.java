@@ -26,7 +26,8 @@ class Ecosystem {
                     // new plant can be added
                     int growthRate = 5;
                     for (int j = 0; j < growthRate && currentSize + j < maxCarry; j++) {
-                        population.get(i).getAllCreatures().add(new Creature(0, 5, 0, 0, null, "Plant", 100, population.get(i).getSpecies()));
+                        population.get(i).getAllCreatures()
+                                .add(new Creature(0, 5, 0, 0, null, "Plant", 100, population.get(i).getSpecies()));
 
                     }
 
@@ -43,6 +44,26 @@ class Ecosystem {
                 for (int j = 0; j < population.get(i).getPopulationCount(); j++) {
                     Creature predator = population.get(i).getAllCreatures().get(j);
                     if (Math.random() < (predator.getVision() / 10.0)) {
+                        ArrayList<String> preyList = predator.getSpecies().getPreyList();
+
+                        for (int k = 0; k < preyList.size(); k++) {
+                            Population preyPop = findPopulation(preyList.get(k));
+                            if (preyPop != null && preyPop.getPopulationCount() > 0) {
+                                int rIndex = (int) (Math.random() * preyPop.getPopulationCount());
+                                Creature prey = preyPop.getAllCreatures().get(rIndex);
+
+                                double catchChance = (predator.getStrength()
+                                        / (predator.getStrength() + prey.getDefence()) + Math.random() * 0.2 - 0.1);
+                                
+                                if(Math.random() < catchChance){
+                                    preyPop.getAllCreatures().remove(prey);
+                                    predator.setHealth(100);
+                                    break;
+                                }
+
+                            }
+
+                        }
                     }
                 }
 

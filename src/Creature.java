@@ -68,5 +68,9 @@ class Creature {
         return parent;
     }
 
+    public Species getSpecies(){
+        return species;
+    }
+
 
 }
