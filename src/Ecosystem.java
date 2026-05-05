@@ -14,6 +14,11 @@ class Ecosystem {
     }
 
     void runGeneration() {
+        plantGrowth();
+        feeding();
+        survivalCheck();
+        reproduction();
+        avgStats();
 
     }
 
@@ -79,8 +84,9 @@ class Ecosystem {
                 Creature c = population.get(i).getAllCreatures().get(j);
                 if (!c.isFed()) {
                     c.setHealth(c.getHealth() - c.getSpecies().getHungerRate());
-                    c.setFed(false);
+                    
                 }
+                c.setFed(false);
             }
             population.get(i).cull();
             
