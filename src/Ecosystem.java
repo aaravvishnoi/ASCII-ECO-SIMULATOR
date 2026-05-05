@@ -87,17 +87,19 @@ class Ecosystem {
         }
     }
 
+    public void reproduction(){
+        for(int i =0; i < population.size();i++){
+            population.get(i).reproduce();
 
+        }
+    }
 
+    public void avgStats(){
+        for(int i =0; i < population.size();i++){
+            population.get(i).avgStats();
 
-
-
-
-
-
-
-
-
+        }
+    }
 
 
     public Population findPopulation(String speciesName) {
