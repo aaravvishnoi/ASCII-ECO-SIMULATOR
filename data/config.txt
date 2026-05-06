@@ -1,0 +1,5 @@
+generations=20
+startingPopulation=10
+mutationRate=0.3
+carryingCapacity=30
+plantGrowthRate=5
