@@ -51,10 +51,9 @@ class Population {
 
     public void avgStats() {
 
-        if(allCreatures.size() ==0){
+        if (allCreatures.size() == 0) {
             System.out.println("No creatures in population");
         }
-
 
         double avg_def = 0;
         double avg_str = 0;
@@ -66,25 +65,29 @@ class Population {
             avg_vis += allCreatures.get(i).getVision();
             avg_speed += allCreatures.get(i).getSpeed();
         }
-        avg_def = avg_def/allCreatures.size();
-        avg_speed = avg_speed/allCreatures.size();
-        avg_str = avg_str/allCreatures.size();
-        avg_vis = avg_vis/allCreatures.size();
+        avg_def = avg_def / allCreatures.size();
+        avg_speed = avg_speed / allCreatures.size();
+        avg_str = avg_str / allCreatures.size();
+        avg_vis = avg_vis / allCreatures.size();
 
-        System.out.println(species.getSpeciesName()+"|"+avg_def+"|"+avg_str+"|"+avg_vis+"|"+avg_speed);
+        System.out.println(species.getSpeciesName() + "|" + avg_def + "|" + avg_str + "|" + avg_vis + "|" + avg_speed);
 
     }
 
-
-    public ArrayList<Creature> getAllCreatures(){
+    public ArrayList<Creature> getAllCreatures() {
         return allCreatures;
     }
 
-    public String getSpeciesName(){
+    public String getSpeciesName() {
         return species.getSpeciesName();
     }
 
-    public int getPopulationCount(){
+    public int getPopulationCount() {
         return allCreatures.size();
+    }
+
+    public Species getSpecies() {
+        return species;
+
     }
 }
