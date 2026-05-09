@@ -1,9 +1,9 @@
 import java.io.File;
 import java.util.Scanner;
 
-public class StructureFileReader {
+public class FileManager {
 
-    public static void main(String[] args) throws Exception {
+    public Config readConfig() throws Exception {
         int generations = 0;
         int startingPopulation = 0;
         double mutationRate = 0.0;
@@ -21,7 +21,7 @@ public class StructureFileReader {
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("File could not be opened.");
-            return;
+            return null;
         }
 
 
@@ -46,6 +46,6 @@ public class StructureFileReader {
         }
         fileScanner.close();
 
-        System.out.println(generations);
+        return new Config(generations, startingPopulation, mutationRate, carryingCapacity, plantGrowthRate);
     }
 }
