@@ -2,38 +2,50 @@ import java.io.File;
 import java.util.Scanner;
 
 public class StructureFileReader {
+
     public static void main(String[] args) throws Exception {
+        int generations = 0;
+        int startingPopulation = 0;
+        double mutationRate = 0.0;
+        int carryingCapacity = 0;
+        int plantGrowthRate = 0;
         // read an arraylist of StockItem objects from a file and print them to the
         // console
         // Implementation for reading structured data from a file would go here
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the file name to read from: ");
         String filename = "config.txt";
-        scanner.close();
 
         Scanner fileScanner = null;
 
         try {
             fileScanner = new Scanner(new java.io.File("data" + File.separator + "input" + File.separator + filename));
         } catch (Exception e) {
-
+            e.printStackTrace();
+            System.out.println("File could not be opened.");
+            return;
         }
+
+
         // do not skip the first line; process all lines including the first
         while (fileScanner.hasNextLine()) {
             String line = fileScanner.nextLine();
             String[] parts = line.split("=");
             if (parts.length == 2) {
                 if (parts[0].equals("generations")) {
-                    int generation = Integer.parseInt(parts[1].trim());
-
+                    generations = Integer.parseInt(parts[1].trim());
+                } else if (parts[0].equals("startingPopulation")) {
+                    startingPopulation = Integer.parseInt(parts[1].trim());
+                } else if (parts[0].equals("mutationRate")) {
+                    mutationRate = Double.parseDouble(parts[1].trim());
+                } else if (parts[0].equals("carryingCapacity")) {
+                    carryingCapacity = Integer.parseInt(parts[1].trim());
+                } else if (parts[0].equals("plantGrowthRate")) {
+                    plantGrowthRate = Integer.parseInt(parts[1].trim());
                 }
-                int startingPopulation = Integer.parseInt(parts[1].trim());
-                double mutation_rate = Double.parseDouble(parts[2].trim());
-                int carryingCapacity = Integer.parseInt(parts[3].trim());
-                int plantGrowthRate = Integer.parseInt(parts[4].trim());
-                System.out.println("");
+
             }
         }
         fileScanner.close();
+
+        System.out.println(generations);
     }
 }
