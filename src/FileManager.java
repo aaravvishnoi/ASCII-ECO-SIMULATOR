@@ -1,4 +1,5 @@
 import java.io.File;
+import java.io.FileWriter;
 import java.util.Scanner;
 
 public class FileManager {
@@ -47,5 +48,22 @@ public class FileManager {
         fileScanner.close();
 
         return new Config(generations, startingPopulation, mutationRate, carryingCapacity, plantGrowthRate);
+    }
+
+    public void writeLog(String message) {
+
+        String filename = "ecosystem_log.txt";
+
+        // GUARANTEED: A File object has been opened that previously did not exist
+        try {
+            FileWriter writer = new FileWriter("data" + File.separator + "output" + File.separator + filename,true);
+
+            // Add a second parameter (true) if you want to open file in append mode
+            writer.write(message + "\n");
+
+            writer.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
