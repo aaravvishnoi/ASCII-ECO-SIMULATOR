@@ -18,7 +18,7 @@ public class FileManager {
         Scanner fileScanner = null;
 
         try {
-            fileScanner = new Scanner(new java.io.File("data" + File.separator + "input" + File.separator + filename));
+            fileScanner = new Scanner(new java.io.File("data" + File.separator + "Input" + File.separator + filename));
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("File could not be opened.");
@@ -56,7 +56,7 @@ public class FileManager {
 
         // GUARANTEED: A File object has been opened that previously did not exist
         try {
-            FileWriter writer = new FileWriter("data" + File.separator + "output" + File.separator + filename,true);
+            FileWriter writer = new FileWriter("data" + File.separator + "Output" + File.separator + filename,true);
 
             // Add a second parameter (true) if you want to open file in append mode
             writer.write(message + "\n");

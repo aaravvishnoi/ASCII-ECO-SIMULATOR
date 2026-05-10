@@ -27,12 +27,36 @@ class Ecosystem {
     /**
      * Runs a single generation of the ecosystem simulation..
      */
-    void runGeneration() {
+    void runGeneration(FileManager fm, int generation) {
         plantGrowth(); // Plants grow up to carrying capacity
-        feeding(); // Predators hunt and consume prey
+        String feedingSummary = feeding(); // Predators hunt and consume prey
         survivalCheck(); // Creatures lose health if unfed; weak creatures are culled
         reproduction(); // Creatures reproduce based on population rules
-        avgStats(); // Update average statistics for each population
+        String statsSummary = avgStats(); // Update average statistics for each population
+        Creature strongestCreature = findStrongestCreature();
+        int totalPopulationCount = getTotalPopulationCount();
+
+        StringBuilder log = new StringBuilder();
+        log.append("Generation ").append(generation).append("\n");
+        log.append("Total population: ").append(totalPopulationCount).append("\n");
+        log.append(feedingSummary).append("\n");
+        log.append(statsSummary);
+
+        if (strongestCreature != null) {
+            log.append("Strongest creature: ")
+               .append(strongestCreature.getSpecies().getSpeciesName())
+               .append("|strength=").append(strongestCreature.getStrength())
+               .append("|defence=").append(strongestCreature.getDefence())
+               .append("|speed=").append(strongestCreature.getSpeed())
+               .append("|vision=").append(strongestCreature.getVision())
+               .append("|health=").append(strongestCreature.getHealth())
+               .append("\n");
+        } else {
+            log.append("Strongest creature: none\n");
+        }
+
+        fm.writeLog(log.toString());
+        System.out.println("Generation " + generation + " complete... Total population: " + totalPopulationCount);
     }
 
     /**
@@ -68,7 +92,9 @@ class Ecosystem {
      * relative strength and defence attributes. Successfully fed predators restore
      * health.
      */
-    public void feeding() {
+    public String feeding() {
+        int catchCount = 0;
+        int escapeCount = 0;
         // Iterate through all populations in the ecosystem
         for (int i = 0; i < population.size(); i++) {
             // Skip plants; only predators hunt
@@ -80,6 +106,7 @@ class Ecosystem {
                     // Check if predator detects prey (vision/10 is probability of finding prey)
                     if (Math.random() < (predator.getVision() / 10.0)) {
                         ArrayList<String> preyList = predator.getSpecies().getPreyList();
+                        boolean caughtPrey = false;
 
                         // Iterate through all prey types this predator hunts
                         for (int k = 0; k < preyList.size(); k++) {
@@ -95,20 +122,29 @@ class Ecosystem {
                                 // Ratio scaled between 0-1, with small random variance (±0.1)
                                 double catchChance = (predator.getStrength()
                                         / (predator.getStrength() + prey.getDefence()) + Math.random() * 0.2 - 0.1);
+                                catchChance = Math.max(0.05, Math.min(0.95, catchChance));
 
                                 // Attempt to catch prey
                                 if (Math.random() < catchChance) {
                                     preyPop.getAllCreatures().remove(prey);
                                     predator.setHealth(100); // Restore health to full
                                     predator.setFed(true); // Mark predator as fed
+                                    catchCount++;
+                                    caughtPrey = true;
                                     break; // Exit loop after successful catch
                                 }
                             }
+                        }
+
+                        if (!caughtPrey) {
+                            escapeCount++;
                         }
                     }
                 }
             }
         }
+
+        return "Feeding summary|catches=" + catchCount + "|escapes=" + escapeCount;
     }
 
     /**
@@ -154,11 +190,44 @@ class Ecosystem {
      * This includes calculating average health, strength, defence, and vision for
      * each population.
      */
-    public void avgStats() {
+    public String avgStats() {
+        StringBuilder stats = new StringBuilder();
+
         // Recalculate statistics for each population
         for (int i = 0; i < population.size(); i++) {
-            population.get(i).avgStats();
+            stats.append(population.get(i).avgStats()).append("\n");
         }
+
+        return stats.toString();
+    }
+
+    /**
+     * Finds the strongest creature across all populations in the ecosystem.
+     *
+     * @return the creature with the highest combat score, or null if no creatures exist
+     */
+    public Creature findStrongestCreature() {
+        Creature strongestCreature = null;
+
+        for (int i = 0; i < population.size(); i++) {
+            if (population.get(i).getSpeciesName().equals("Plant")) {
+                continue;
+            }
+
+            ArrayList<Creature> creatures = population.get(i).getAllCreatures();
+            for (int j = 0; j < creatures.size(); j++) {
+                Creature currentCreature = creatures.get(j);
+                int currentScore = currentCreature.getStrength() + currentCreature.getDefence();
+                int strongestScore = strongestCreature == null ? Integer.MIN_VALUE
+                        : strongestCreature.getStrength() + strongestCreature.getDefence();
+
+                if (strongestCreature == null || currentScore > strongestScore) {
+                    strongestCreature = currentCreature;
+                }
+            }
+        }
+
+        return strongestCreature;
     }
 
     /**
@@ -176,6 +245,21 @@ class Ecosystem {
         }
         // Return null if no matching population found
         return null;
+    }
+
+    /**
+     * Calculates the total number of creatures currently in the ecosystem.
+     *
+     * @return total creature count across all populations
+     */
+    private int getTotalPopulationCount() {
+        int total = 0;
+
+        for (int i = 0; i < population.size(); i++) {
+            total += population.get(i).getPopulationCount();
+        }
+
+        return total;
     }
 
 }

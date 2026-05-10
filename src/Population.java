@@ -12,8 +12,16 @@ class Population {
     }
 
     public void reproduce() {
+        if (species.getSpeciesName().equals("Plant")) {
+            return;
+        }
+
         ArrayList<Creature> newborn = new ArrayList<>();
         for (int i = 0; i < allCreatures.size(); i++) {
+            if (allCreatures.size() + newborn.size() >= species.getMaxCarry()) {
+                break;
+            }
+
             if (allCreatures.get(i).getHealth() >= 60) {
                 // creature reproduces
                 int new_def = mutate(allCreatures.get(i).getDefence());
@@ -49,10 +57,9 @@ class Population {
         allCreatures.removeAll(dead);
     }
 
-    public void avgStats() {
-
+    public String avgStats() {
         if (allCreatures.size() == 0) {
-            System.out.println("No creatures in population");
+            return species.getSpeciesName() + "|No creatures";
         }
 
         double avg_def = 0;
@@ -65,13 +72,13 @@ class Population {
             avg_vis += allCreatures.get(i).getVision();
             avg_speed += allCreatures.get(i).getSpeed();
         }
+
         avg_def = avg_def / allCreatures.size();
         avg_speed = avg_speed / allCreatures.size();
         avg_str = avg_str / allCreatures.size();
         avg_vis = avg_vis / allCreatures.size();
 
-        System.out.println(species.getSpeciesName() + "|" + avg_def + "|" + avg_str + "|" + avg_vis + "|" + avg_speed);
-
+        return species.getSpeciesName() + "|" + avg_def + "|" + avg_str + "|" + avg_vis + "|" + avg_speed;
     }
 
     public ArrayList<Creature> getAllCreatures() {
