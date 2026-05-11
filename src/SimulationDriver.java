@@ -4,11 +4,11 @@ class SimulationDriver {
         Config config = fm.readConfig();
 
         Species Plant = new Species("Plant", "Producer", 4, 0, config.getCarryCapacity());
-        Species Worm = new Species("Worm", "Herbivore S", 5, 4, config.getCarryCapacity());
-        Species Rabbit = new Species("Rabbit", "Herbivore L", 8, 6, config.getCarryCapacity());
-        Species Fox = new Species("Fox", "Predator S", 10, 7, config.getCarryCapacity());
-        Species Wolf = new Species("Wolf", "Predator L", 12, 8, config.getCarryCapacity());
-        Species Eagle = new Species("Eagle", "Apex", 15, 9, config.getCarryCapacity());
+        Species Worm = new Species("Worm", "Herbivore S", 5, 4, 20);
+        Species Rabbit = new Species("Rabbit", "Herbivore L", 8, 6, 15);
+        Species Fox = new Species("Fox", "Predator S", 10, 7, 10);
+        Species Wolf = new Species("Wolf", "Predator L", 12, 8, 8);
+        Species Eagle = new Species("Eagle", "Apex", 15, 9, 5);
 
         Worm.addPrey("Plant");
         Rabbit.addPrey("Plant");
