@@ -21,6 +21,21 @@ class SimulationDriver {
         Species Eagle = new Species("Eagle", "Apex", 15, 9, 5);
         Eagle.setAscii("       .   ,\n       '. '.  \\  \\\n      ._ '-.'. `\\  \\\n        '-._; .'; `-.''.  \n       `~-.; '.       '. \n        '--,`           '.\n           -='.          ;\n .--=~~=-,    -.;        ;\n .-=`;    `~,_.;        /\n `  ,-`'    .-;         |\n    .-~`.    .;         ;\n     .;.-   .-;         ,\\\n       `.'   ,=;     .-'  `~.-._\n        .';   .';  .'      .'   '-. \n          .\\  ;  ;        ,.' _  a',\n         .'~\";-`   ;      ;\"~` `'-=.)\n       .' .'   . _;  ;',  ;\n       '-.._ `~`.'  \\  ; ; :\n            `~'    _'\\_ \\_\n                  /=`^^=`\"\"/`)-.\n                  \\ =  _ =     =\\\n                   `\"\"` `~-. =   ; ");
 
+        // Print ASCII art for all species
+        System.out.println("=== PLANT ===");
+        System.out.println(Plant.getASCII());
+        System.out.println("\n=== WORM ===");
+        System.out.println(Worm.getASCII());
+        System.out.println("\n=== RABBIT ===");
+        System.out.println(Rabbit.getASCII());
+        System.out.println("\n=== FOX ===");
+        System.out.println(Fox.getASCII());
+        System.out.println("\n=== WOLF ===");
+        System.out.println(Wolf.getASCII());
+        System.out.println("\n=== EAGLE ===");
+        System.out.println(Eagle.getASCII());
+        System.out.println("\n=== STARTING SIMULATION ===\n");
+
         Worm.addPrey("Plant");
         Rabbit.addPrey("Plant");
         Fox.addPrey("Rabbit");
