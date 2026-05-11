@@ -1,6 +1,9 @@
 class SimulationDriver {
     public static void main(String[] args) throws Exception {
-        Species Plant = new Species("Plant", "Producer", 4, 0, 30);
+        FileManager fm = new FileManager();
+        Config config = fm.readConfig();
+
+        Species Plant = new Species("Plant", "Producer", 4, 0, config.getCarryCapacity());
         Species Worm = new Species("Worm", "Herbivore S", 5, 4, 20);
         Species Rabbit = new Species("Rabbit", "Herbivore L", 8, 6, 15);
         Species Fox = new Species("Fox", "Predator S", 10, 7, 10);
@@ -17,14 +20,14 @@ class SimulationDriver {
         Eagle.addPrey("Fox");
         Eagle.addPrey("Rabbit");
 
-        Population plantPop = new Population(Plant);
-        Population wormPop = new Population(Worm);
-        Population rabbitPop = new Population(Rabbit);
-        Population foxPop = new Population(Fox);
-        Population wolfPop = new Population(Wolf);
-        Population eaglePop = new Population(Eagle);
+        Population plantPop = new Population(Plant, config.getMutationRate());
+        Population wormPop = new Population(Worm, config.getMutationRate());
+        Population rabbitPop = new Population(Rabbit, config.getMutationRate());
+        Population foxPop = new Population(Fox, config.getMutationRate());
+        Population wolfPop = new Population(Wolf, config.getMutationRate());
+        Population eaglePop = new Population(Eagle, config.getMutationRate());
 
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < config.getStartingPopulation(); i++) {
             plantPop.getAllCreatures().add(new Creature(0, 0, 0, 0, null, "Plant", 100, Plant));
             wormPop.getAllCreatures().add(new Creature(3, 2, 2, 3, null, "Worm", 100, Worm));
             rabbitPop.getAllCreatures().add(new Creature(6, 4, 4, 5, null, "Rabbit", 100, Rabbit));
@@ -33,16 +36,13 @@ class SimulationDriver {
             eaglePop.getAllCreatures().add(new Creature(9, 10, 5, 10, null, "Eagle", 100, Eagle));
         }
 
-        Ecosystem eco = new Ecosystem();
+        Ecosystem eco = new Ecosystem(config.getPlantGrowthRate());
         eco.addPopulation(plantPop);
         eco.addPopulation(wormPop);
         eco.addPopulation(rabbitPop);
         eco.addPopulation(foxPop);
         eco.addPopulation(wolfPop);
         eco.addPopulation(eaglePop);
-
-        FileManager fm = new FileManager();
-        Config config = fm.readConfig();
 
         for (int i = 0; i < config.getGenerationCount(); i++) {
             eco.runGeneration(fm, i);
