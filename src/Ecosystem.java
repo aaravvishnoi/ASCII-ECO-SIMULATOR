@@ -11,6 +11,7 @@ class Ecosystem {
 
     // ArrayList to store all populations in the ecosystem
     private ArrayList<Population> population;
+    private int plantGrowthRate;
 
     /**
      * Constructor for Ecosystem class.
@@ -18,6 +19,12 @@ class Ecosystem {
      */
     public Ecosystem() {
         this.population = new ArrayList<>();
+        this.plantGrowthRate = 5;
+    }
+
+    public Ecosystem(int plantGrowthRate) {
+        this.population = new ArrayList<>();
+        this.plantGrowthRate = plantGrowthRate;
     }
 
     public void addPopulation(Population p) {
@@ -73,7 +80,7 @@ class Ecosystem {
 
                 // Only add plants if population hasn't reached carrying capacity
                 if (currentSize < maxCarry) {
-                    int growthRate = 5; // Number of new plants to add per generation
+                    int growthRate = plantGrowthRate; // Number of new plants to add per generation
 
                     // Add new plants up to growth rate or carrying capacity, whichever is smaller
                     for (int j = 0; j < growthRate && currentSize + j < maxCarry; j++) {
