@@ -5,10 +5,16 @@ class Population {
     // Holds arraylist of all creatures of one species
     private ArrayList<Creature> allCreatures;
     private Species species;
+    private double mutationRate;
 
     public Population(Species species) {
+        this(species, 0.3);
+    }
+
+    public Population(Species species, double mutationRate) {
         this.species = species;
         this.allCreatures = new ArrayList<>();
+        this.mutationRate = mutationRate;
     }
 
     public void reproduce() {
@@ -39,7 +45,7 @@ class Population {
 
     public int mutate(int stat) {
         double roll = Math.random();
-        if (roll < 0.3) {
+        if (roll < mutationRate) {
             int delta = (int) (Math.random() * 3) - 1;
             stat = stat + delta;
             stat = Math.max(1, Math.min(15, stat));
