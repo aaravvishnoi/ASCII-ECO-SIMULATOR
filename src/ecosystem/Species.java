@@ -7,7 +7,7 @@ import java.util.*;
  */
 public class Species {
     // Stores the species' ASCII art for display in the simulation
-    private String ASCII_art;
+    private String asciiArt;
     private String speciesName;
     private String foodChainRole;
     private int maxAge;
@@ -53,12 +53,12 @@ public class Species {
         return maxCarryingCapacity;
     }
 
-    public String getASCII() {
-        return ASCII_art;
+    public String getAsciiArt() {
+        return asciiArt;
     }
 
-    public void setAscii(String ASCII) {
-        ASCII_art = ASCII;
+    public void setAsciiArt(String ASCII) {
+        this.asciiArt = ASCII;
     }
 
     public ArrayList<String> getPreyList() {

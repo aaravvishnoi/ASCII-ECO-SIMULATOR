@@ -6,36 +6,36 @@ class SimulationDriver {
         Config config = fm.readConfig();
 
         Species Plant = new Species("Plant", "Producer", 4, 0, config.getCarryCapacity());
-        Plant.setAscii("      _.--'--._\n    .'. ':. ' :'.\n   '`' : `. `: ':'\n  : : '.'. .'.':.`:\n  :' -`= `+ .= - `:\n  :.' .'.' :.'.`:':\n   : : .:`' .:`.': \n    '.: . :`. :.' \n      `'--,--'`\n          y\n         ( \n          \\       _\n           \\    /`/\n     _      |__/:/_  \n     \\`\\    |\\ :  /\n     _\\::\\_  /\\ : /_\n     \\ : /_/\\  :  /\n     _\\ : /_/ : /`\n     \\  :  /.'/`\n jgs  `\\ :/'/``\n`^^`^`^``^^`^^^`^^`^^^`^");
+        Plant.setAsciiArt("      _.--'--._\n    .'. ':. ' :'.\n   '`' : `. `: ':'\n  : : '.'. .'.':.`:\n  :' -`= `+ .= - `:\n  :.' .'.' :.'.`:':\n   : : .:`' .:`.': \n    '.: . :`. :.' \n      `'--,--'`\n          y\n         ( \n          \\       _\n           \\    /`/\n     _      |__/:/_  \n     \\`\\    |\\ :  /\n     _\\::\\_  /\\ : /_\n     \\ : /_/\\  :  /\n     _\\ : /_/ : /`\n     \\  :  /.'/`\n jgs  `\\ :/'/``\n`^^`^`^``^^`^^^`^^`^^^`^");
         
         Species Worm = new Species("Worm", "Herbivore S", 5, 4, 20);
-        Worm.setAscii("                                                        /~~\\\n          ____                                         /'o  |\n        .~  | `\\             ,-~~~\\~-_               ,'  _/'|\n        `\\_/   /'\\         /'`\\    \\  ~,             |     .'\n            `,/'  |      ,'_   |   |   |`\\          ,'~~\\  |\n             |   /`:     |  `\\ /~~~~\\ /   |        ,'    `.'  \n             | /'  |     |   ,'      `\\  /`|      /'\\    /\n             `|   / \\_ _/ `\\ |         |'   `----\\   |  /'\n              `./'  | ~ |   ,'         |    |     |  |/'\n               `\\   |   /  ,'           `\\ /      |/~'\n                 `\\/_ /~ _/               `~------'\n                     ~~~~\n");
+        Worm.setAsciiArt("                                                        /~~\\\n          ____                                         /'o  |\n        .~  | `\\             ,-~~~\\~-_               ,'  _/'|\n        `\\_/   /'\\         /'`\\    \\  ~,             |     .'\n            `,/'  |      ,'_   |   |   |`\\          ,'~~\\  |\n             |   /`:     |  `\\ /~~~~\\ /   |        ,'    `.'  \n             | /'  |     |   ,'      `\\  /`|      /'\\    /\n             `|   / \\_ _/ `\\ |         |'   `----\\   |  /'\n              `./'  | ~ |   ,'         |    |     |  |/'\n               `\\   |   /  ,'           `\\ /      |/~'\n                 `\\/_ /~ _/               `~------'\n                     ~~~~\n");
         
         Species Rabbit = new Species("Rabbit", "Herbivore L", 8, 6, 15);
-        Rabbit.setAscii("               /|      __\n             +      / |   ,-~ /             +\n     .              Y :|  //  /                .         *\n         .          | jj /( .^     *\n               *    >-\"~\"-v\"              .        *        .\n*                  /       Y\n   .     .        jo  o    |     .            +\n                 ( ~T~     j                     +     .\n      +           >._-' _./         +\n               /| ;-\"~ _  l\n  .           / l/ ,-\"~    \\     +\n              \\//\\/      .- \\\n       +       Y        /    Y\n               l       I     !\n               ]\\      _\\    /\"\\\n              (\" ~----( ~   Y.  )\n          ~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+        Rabbit.setAsciiArt("               /|      __\n             +      / |   ,-~ /             +\n     .              Y :|  //  /                .         *\n         .          | jj /( .^     *\n               *    >-\"~\"-v\"              .        *        .\n*                  /       Y\n   .     .        jo  o    |     .            +\n                 ( ~T~     j                     +     .\n      +           >._-' _./         +\n               /| ;-\"~ _  l\n  .           / l/ ,-\"~    \\     +\n              \\//\\/      .- \\\n       +       Y        /    Y\n               l       I     !\n               ]\\      _\\    /\"\\\n              (\" ~----( ~   Y.  )\n          ~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
         
         Species Fox = new Species("Fox", "Predator S", 10, 7, 10);
-        Fox.setAscii("   /|_/|\n  / ^ ^(_o\n /    __.' \n /     \\\\\n(_) (_) '._\n   '.__     '. .-''-'.\n     ( '.   ('.____.'' \n     _) )'_, )mrf\n    (__/ (__/\n");
+        Fox.setAsciiArt("   /|_/|\n  / ^ ^(_o\n /    __.' \n /     \\\\\n(_) (_) '._\n   '.__     '. .-''-'.\n     ( '.   ('.____.'' \n     _) )'_, )mrf\n    (__/ (__/\n");
         
         Species Wolf = new Species("Wolf", "Predator L", 12, 8, 8);
-        Wolf.setAscii("        _\n       / \\      _-'\n     _/|  \\-''- _ /\n__-' { |          \\\n    /             \\\n    /       \"o.  |o }\n    |            \\ ;\n                  ',\n       \\_         __\\\n         ''-_    \\./\\/ \n           / '-____'\n          /\n        _'\n      _-'\n");
+        Wolf.setAsciiArt("        _\n       / \\      _-'\n     _/|  \\-''- _ /\n__-' { |          \\\n    /             \\\n    /       \"o.  |o }\n    |            \\ ;\n                  ',\n       \\_         __\\\n         ''-_    \\./\\/ \n           / '-____'\n          /\n        _'\n      _-'\n");
         
         Species Eagle = new Species("Eagle", "Apex", 15, 9, 5);
-        Eagle.setAscii("       .   ,\n       '. '.  \\  \\\n      ._ '-.'. `\\  \\\n        '-._; .'; `-.''.  \n       `~-.; '.       '. \n        '--,`           '.\n           -='.          ;\n .--=~~=-,    -.;        ;\n .-=`;    `~,_.;        /\n `  ,-`'    .-;         |\n    .-~`.    .;         ;\n     .;.-   .-;         ,\\\n       `.'   ,=;     .-'  `~.-._\n        .';   .';  .'      .'   '-. \n          .\\  ;  ;        ,.' _  a',\n         .'~\";-`   ;      ;\"~` `'-=.)\n       .' .'   . _;  ;',  ;\n       '-.._ `~`.'  \\  ; ; :\n            `~'    _'\\_ \\_\n                  /=`^^=`\"\"/`)-.\n                  \\ =  _ =     =\\\n                   `\"\"` `~-. =   ; ");
+        Eagle.setAsciiArt("       .   ,\n       '. '.  \\  \\\n      ._ '-.'. `\\  \\\n        '-._; .'; `-.''.  \n       `~-.; '.       '. \n        '--,`           '.\n           -='.          ;\n .--=~~=-,    -.;        ;\n .-=`;    `~,_.;        /\n `  ,-`'    .-;         |\n    .-~`.    .;         ;\n     .;.-   .-;         ,\\\n       `.'   ,=;     .-'  `~.-._\n        .';   .';  .'      .'   '-. \n          .\\  ;  ;        ,.' _  a',\n         .'~\";-`   ;      ;\"~` `'-=.)\n       .' .'   . _;  ;',  ;\n       '-.._ `~`.'  \\  ; ; :\n            `~'    _'\\_ \\_\n                  /=`^^=`\"\"/`)-.\n                  \\ =  _ =     =\\\n                   `\"\"` `~-. =   ; ");
 
         // Print ASCII art for all species
         System.out.println("=== PLANT ===");
-        System.out.println(Plant.getASCII());
+        System.out.println(Plant.getAsciiArt());
         System.out.println("\n=== WORM ===");
-        System.out.println(Worm.getASCII());
+        System.out.println(Worm.getAsciiArt());
         System.out.println("\n=== RABBIT ===");
-        System.out.println(Rabbit.getASCII());
+        System.out.println(Rabbit.getAsciiArt());
         System.out.println("\n=== FOX ===");
-        System.out.println(Fox.getASCII());
+        System.out.println(Fox.getAsciiArt());
         System.out.println("\n=== WOLF ===");
-        System.out.println(Wolf.getASCII());
+        System.out.println(Wolf.getAsciiArt());
         System.out.println("\n=== EAGLE ===");
-        System.out.println(Eagle.getASCII());
+        System.out.println(Eagle.getAsciiArt());
         System.out.println("\n=== STARTING SIMULATION ===\n");
 
         Worm.addPrey("Plant");

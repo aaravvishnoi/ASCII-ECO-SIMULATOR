@@ -32,11 +32,11 @@ public class Population {
 
             if (allCreatures.get(i).getHealth() >= 60) {
                 // creature reproduces
-                int new_def = mutate(allCreatures.get(i).getDefence());
-                int new_strenght = mutate(allCreatures.get(i).getStrength());
-                int new_speed = mutate(allCreatures.get(i).getSpeed());
-                int new_Vision = mutate(allCreatures.get(i).getVision());
-                Creature child = new Creature(new_speed, new_def, new_strenght, new_Vision, allCreatures.get(i),
+                int newDefence = mutate(allCreatures.get(i).getDefence());
+                int newStrength = mutate(allCreatures.get(i).getStrength());
+                int newSpeed = mutate(allCreatures.get(i).getSpeed());
+                int newVision = mutate(allCreatures.get(i).getVision());
+                Creature child = new Creature(newSpeed, newDefence, newStrength, newVision, allCreatures.get(i),
                         species.getSpeciesName(), 100, species);
                 newborn.add(child);
             }
@@ -70,23 +70,23 @@ public class Population {
             return species.getSpeciesName() + "|No creatures";
         }
 
-        double avg_def = 0;
-        double avg_str = 0;
-        double avg_vis = 0;
-        double avg_speed = 0;
+        double avgDefence = 0;
+        double avgStrength = 0;
+        double avgVision = 0;
+        double avgSpeed = 0;
         for (int i = 0; i < allCreatures.size(); i++) {
-            avg_def += allCreatures.get(i).getDefence();
-            avg_str += allCreatures.get(i).getStrength();
-            avg_vis += allCreatures.get(i).getVision();
-            avg_speed += allCreatures.get(i).getSpeed();
+            avgDefence += allCreatures.get(i).getDefence();
+            avgStrength += allCreatures.get(i).getStrength();
+            avgVision += allCreatures.get(i).getVision();
+            avgSpeed += allCreatures.get(i).getSpeed();
         }
 
-        avg_def = avg_def / allCreatures.size();
-        avg_speed = avg_speed / allCreatures.size();
-        avg_str = avg_str / allCreatures.size();
-        avg_vis = avg_vis / allCreatures.size();
+        avgDefence = avgDefence / allCreatures.size();
+        avgSpeed = avgSpeed / allCreatures.size();
+        avgStrength = avgStrength / allCreatures.size();
+        avgVision = avgVision / allCreatures.size();
 
-        return species.getSpeciesName() + "|" + avg_def + "|" + avg_str + "|" + avg_vis + "|" + avg_speed;
+        return species.getSpeciesName() + "|" + avgDefence + "|" + avgStrength + "|" + avgVision + "|" + avgSpeed;
     }
 
     public ArrayList<Creature> getAllCreatures() {

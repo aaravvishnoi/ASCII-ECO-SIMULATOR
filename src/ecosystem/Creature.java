@@ -47,8 +47,8 @@ public class Creature {
     }
     
     //updates the speed value of the calling creature
-    public void setSpeed(int new_speed){
-        this.baseSpeed = new_speed;
+    public void setSpeed(int newSpeed){
+        this.baseSpeed = newSpeed;
     }
 
     //gets the defence value of the calling creature
