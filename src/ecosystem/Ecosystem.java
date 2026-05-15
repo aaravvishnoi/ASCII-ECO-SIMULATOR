@@ -168,6 +168,8 @@ class Ecosystem {
             for (int j = 0; j < population.get(i).getPopulationCount(); j++) {
                 Creature c = population.get(i).getAllCreatures().get(j);
 
+                c.ageIncrement();
+
                 // Unfed creatures lose health proportional to species hunger rate
                 if (!c.isFed()) {
                     c.setHealth(c.getHealth() - c.getSpecies().getHungerRate());

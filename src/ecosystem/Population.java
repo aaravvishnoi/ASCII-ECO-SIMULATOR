@@ -32,11 +32,11 @@ public class Population {
 
             if (allCreatures.get(i).getHealth() >= 60) {
                 // creature reproduces
-                int newDefence = mutate(allCreatures.get(i).getDefence());
+                int newDef = mutate(allCreatures.get(i).getDefence());
                 int newStrength = mutate(allCreatures.get(i).getStrength());
                 int newSpeed = mutate(allCreatures.get(i).getSpeed());
                 int newVision = mutate(allCreatures.get(i).getVision());
-                Creature child = new Creature(newSpeed, newDefence, newStrength, newVision, allCreatures.get(i),
+                Creature child = new Creature(newSpeed, newDef, newStrength, newVision, allCreatures.get(i),
                         species.getSpeciesName(), 100, species);
                 newborn.add(child);
             }
