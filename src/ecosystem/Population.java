@@ -1,6 +1,8 @@
+package ecosystem;
+
 import java.util.*;
 
-class Population {
+public class Population {
 
     // Holds arraylist of all creatures of one species
     private ArrayList<Creature> allCreatures;

@@ -1,3 +1,5 @@
+package ecosystem;
+
 class SimulationDriver {
     public static void main(String[] args) throws Exception {
         FileManager fm = new FileManager();

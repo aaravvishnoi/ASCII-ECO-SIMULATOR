@@ -1,6 +1,8 @@
+package ecosystem;
+
 import java.util.ArrayList;
 
-class FamilyTree {
+public class FamilyTree {
     public int getDepth(Creature creature, int depth) {
         // Implementation for getting the depth of a creature in the family tree
         // base case if((c.getParent() != null, continue))

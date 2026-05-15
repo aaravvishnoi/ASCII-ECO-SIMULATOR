@@ -1,4 +1,6 @@
-class Config {
+package ecosystem;
+
+public class Config {
     // data that will be obtained via config file into appropriate variables 
     private int generations;
     private int startingPopulation;

@@ -1,9 +1,11 @@
+package ecosystem;
+
 import java.util.*;
 /**
  * Represents a species in the ecosystem, including its traits, food relationships,
  * and optional ASCII art for display.
  */
-class Species {
+public class Species {
     // Stores the species' ASCII art for display in the simulation
     private String ASCII_art;
     private String speciesName;

@@ -1,4 +1,6 @@
-class Creature {
+package ecosystem;
+
+public class Creature {
     // Represents one individual creature
 
     // Basic stats for each creature.
