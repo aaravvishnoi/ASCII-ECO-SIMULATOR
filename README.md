@@ -1,4 +1,4 @@
-ASCII ECO SIMULATOR 
+**ASCII ECO SIMULATOR**
 What problems does your application solve?
 The Ecosystem Simulator is a text-based Java application that models a living, evolving ecosystems. The simulation runs autonomously acorss multiple generations. Each generation, creatures feed,compete, reproduce, and die - with their offspring inherting mutated stats. Over time, natural slection drives the popluation to evolve.
 The simulaton is non-interactive by desing. The Driver class runs the ecosystem and prints detailed output to the console each generation, including ASCII art for each species, population statistics, and evolution logs. Results are stored to a file at the end.
