@@ -4,7 +4,7 @@ public class Creature {
     // Represents one individual creature
 
     // Basic stats for each creature.
-    private int baseSpeed, baseDefence, baseStrength, baseVision, age, hunger, health;
+    private int baseSpeed, baseDefence, baseStrength, baseVision, age, health;
     private String name;
     private Creature parent;
     private Species species;
@@ -22,7 +22,6 @@ public class Creature {
         this.baseStrength = strength;
         this.parent = parent;
         this.health = health;
-        this.hunger = 0;
         this.isFed = false;
     }
 
@@ -54,11 +53,6 @@ public class Creature {
     //gets the defence value of the calling creature
     public int getDefence() {
         return baseDefence;
-    }
-
-    //gets the health value of the calling Creature
-    public int getHunger() {
-        return hunger;
     }
 
     //gets the vision value of the calling Creature
