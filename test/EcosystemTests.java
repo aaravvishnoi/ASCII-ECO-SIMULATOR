@@ -7,6 +7,8 @@ import ecosystem.Creature;
 import ecosystem.Population;
 import ecosystem.Species;
 import ecosystem.FamilyTree;
+import ecosystem.Config;
+import ecosystem.FileManager;
 
 public class EcosystemTests {
 
@@ -154,5 +156,25 @@ public class EcosystemTests {
         FamilyTree tree = new FamilyTree();
         ArrayList<Creature> ancestors = tree.getAncestors(creature3);
         assertEquals(2, ancestors.size());
+    }
+
+    // =================================================================
+    // FileManager Class Tests
+    // =================================================================
+
+    @Test 
+    public void checkConfigFileValue(){
+        //ensure all necessary values are present in the config file
+        FileManager fileManager = new FileManager();
+        try {
+            Config config = fileManager.readConfig();
+            assertEquals(20, config.getGenerationCount());
+            assertEquals(10, config.getStartingPopulation());
+            assertEquals(0.3, config.getMutationRate(), 0.001);
+            assertEquals(30, config.getCarryCapacity());
+            assertEquals(5, config.getPlantGrowthRate());
+        } catch (Exception e) {
+            fail("Should not have thrown an exception: " + e.getMessage());
+        }
     }
 }
