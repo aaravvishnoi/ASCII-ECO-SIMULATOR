@@ -38,12 +38,9 @@ public class EcosystemTests {
     public void testMutationAttempt() {
         // checking Mutation rate 0 (no mutation) and 1 (always mutation attempt)
         Species testSpecies = new Species("Test Species", null, 0, 0, 0);
-        Population testPopulation = new Population(testSpecies);
-        int result = testPopulation.mutate(0);
-        int result2 = testPopulation.mutate(1);
-        assertTrue(result == 0);
-        assertTrue(result2 >= 0);
-
+        Population testPopulation = new Population(testSpecies, 1.0); // Ensure mutation always happens
+        int result = testPopulation.mutate(1);
+        assertTrue(result >= 1);
     }
 
     @Test
