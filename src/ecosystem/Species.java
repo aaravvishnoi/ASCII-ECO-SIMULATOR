@@ -9,7 +9,6 @@ public class Species {
     // Stores the species' ASCII art for display in the simulation
     private String asciiArt;
     private String speciesName;
-    private String foodChainRole;
     private int maxAge;
     private int hungerRate;
     private int maxCarryingCapacity;
@@ -19,7 +18,6 @@ public class Species {
 
     public Species(String speciesName, String foodChainRole, int maxAge, int hungerRate, int maxCarryingCapacity) {
         this.speciesName = speciesName;
-        this.foodChainRole = foodChainRole;
         this.maxAge = maxAge;
         this.hungerRate = hungerRate;
         this.maxCarryingCapacity = maxCarryingCapacity;
