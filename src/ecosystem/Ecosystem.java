@@ -170,17 +170,17 @@ class Ecosystem {
         for (int i = 0; i < population.size(); i++) {
             // Check each creature in the population
             for (int j = 0; j < population.get(i).getPopulationCount(); j++) {
-                Creature c = population.get(i).getAllCreatures().get(j);
+                Creature creature = population.get(i).getAllCreatures().get(j);
 
-                c.ageIncrement();
+                creature.ageIncrement();
 
                 // Unfed creatures lose health proportional to species hunger rate
-                if (!c.isFed()) {
-                    c.setHealth(c.getHealth() - c.getSpecies().getHungerRate());
+                if (!creature.isFed()) {
+                    creature.setHealth(creature.getHealth() - creature.getSpecies().getHungerRate());
                 }
 
                 // Reset fed status for next generation
-                c.setFed(false);
+                creature.setFed(false);
             }
 
             // Remove all creatures with health <= 0 from the population
