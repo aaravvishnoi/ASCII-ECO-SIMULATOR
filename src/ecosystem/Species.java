@@ -68,12 +68,4 @@ public class Species {
 
     }
 
-    public ArrayList<String> getPredator() {
-        return null;
-    }
-
-    public void addPredator(String predatorName) {
-        
-    }
-
 }
