@@ -12,8 +12,6 @@ public class FileManager {
         double mutationRate = 0.0;
         int carryingCapacity = 0;
         int plantGrowthRate = 0;
-        // read an arraylist of StockItem objects from a file and print them to the
-        // console
         // Implementation for reading structured data from a file would go here
         String filename = "config.txt";
 

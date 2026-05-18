@@ -5,6 +5,10 @@ class SimulationDriver {
         FileManager fm = new FileManager();
         Config config = fm.readConfig();
 
+        if (config == null) {
+            return;
+        }
+
         Species plantSpecies = new Species("Plant", "Producer", 4, 0, config.getCarryCapacity());
         plantSpecies.setAsciiArt("      _.--'--._\n    .'. ':. ' :'.\n   '`' : `. `: ':'\n  : : '.'. .'.':.`:\n  :' -`= `+ .= - `:\n  :.' .'.' :.'.`:':\n   : : .:`' .:`.': \n    '.: . :`. :.' \n      `'--,--'`\n          y\n         ( \n          \\       _\n           \\    /`/\n     _      |__/:/_  \n     \\`\\    |\\ :  /\n     _\\::\\_  /\\ : /_\n     \\ : /_/\\  :  /\n     _\\ : /_/ : /`\n     \\  :  /.'/`\n jgs  `\\ :/'/``\n`^^`^`^``^^`^^^`^^`^^^`^");
         

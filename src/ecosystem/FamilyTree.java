@@ -14,21 +14,21 @@ public class FamilyTree {
     }
 
     public String printLineage(Creature creature) {
-        // should recurisvely print each anecestor name up the chain
+        // should recursively print each ancestor name up the chain
         if (creature.getParent() == null) {
             return creature.getName();
         }
         return creature.getName() + " -> " + printLineage(creature.getParent());
     }
-    //recursively adds all the ancestors to a new ArrayList with datatype Creature 
+    //recursively adds all the ancestors to a new ArrayList of type Creature 
     public ArrayList<Creature> getAncestors(Creature creature) {
         ArrayList<Creature> ancestors = new ArrayList<Creature>();
         Creature current = creature.getParent();
-        //checks if there is no parent, then the Creature is the only ancestor in the family tree
+        //checks if there is no parent, then the ancestor list is empty
         if (current == null) {
             return ancestors;
         } else {
-        //Adds the ancestors including the current creature and its ancestors to the Array
+        //Adds the parent and its ancestors to the Array
             ancestors.add(current);
             ancestors.addAll(getAncestors(current));
         }

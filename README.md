@@ -23,7 +23,7 @@ How to run
 
 Ensure Java is installed
 Navigate to the project root folder in terminal
-Compile with javac src/*.java -cp lib/junit-4.13.2.jar
-Run with java -cp src SimulationDriver
+Compile with javac -cp lib/junit-4.13.2.jar src/ecosystem/*.java
+Run with java -cp src ecosystem.SimulationDriver
 Config can be adjusted in data/Input/config.txt
 Output log is written to data/Output/ecosystem_log.txt
