@@ -26,43 +26,48 @@ public class Species {
         this.preyList = new ArrayList<>();
     }
 
+    //returns Species name
     public String getSpeciesName() {
         return speciesName;
 
     }
 
-    public String getFoodChainRole() {
-        return foodChainRole;
-    }
-
+    //gets max age of the Species 
     public int getMaxAge() {
         return maxAge;
     }
 
+    //returns hunger rate of Species
     public int getHungerRate() {
         return hungerRate;
     }
 
+    //updates hunger rate for calling object (Species)
     public void setHungerRate(int newHungerRate) {
         hungerRate = newHungerRate;
     }
 
+    //gets the maximum number of creatures that can exist in the population
     public int getMaxCarry() {
         return maxCarryingCapacity;
     }
 
+    //returns the custom ascii art of the species
     public String getAsciiArt() {
         return asciiArt;
     }
 
+    //updates the ascii art 
     public void setAsciiArt(String ASCII) {
         this.asciiArt = ASCII;
     }
 
+    //returns the preys of the Species 
     public ArrayList<String> getPreyList() {
         return preyList;
     }
-
+    
+    //adds preys to the Species prey list
     public void addPrey(String preyName) {
         preyList.add(preyName);
 
