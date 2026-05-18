@@ -15,7 +15,6 @@ public class Species {
     private int maxCarryingCapacity;
 
     private ArrayList<String> preyList;
-    private ArrayList<String> predatorList;
 
 
     public Species(String speciesName, String foodChainRole, int maxAge, int hungerRate, int maxCarryingCapacity) {
@@ -25,7 +24,6 @@ public class Species {
         this.hungerRate = hungerRate;
         this.maxCarryingCapacity = maxCarryingCapacity;
         this.preyList = new ArrayList<>();
-        this.predatorList = new ArrayList<>();
     }
 
     public String getSpeciesName() {
@@ -71,11 +69,11 @@ public class Species {
     }
 
     public ArrayList<String> getPredator() {
-        return predatorList;
+        return null;
     }
 
     public void addPredator(String predatorName) {
-        predatorList.add(predatorName);
+        
     }
 
 }

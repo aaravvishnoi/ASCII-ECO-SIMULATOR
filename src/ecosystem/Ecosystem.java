@@ -10,6 +10,7 @@ import java.util.*;
  * reproduction, and statistical tracking across generations.
  */
 class Ecosystem {
+    private static final String PLANT_NAME = "Plant";
 
     // ArrayList to store all populations in the ecosystem
     private ArrayList<Population> population;
@@ -76,7 +77,7 @@ class Ecosystem {
     void plantGrowth() {
         // Iterate through all populations to find plant species
         for (int i = 0; i < population.size(); i++) {
-            if (population.get(i).getSpeciesName().equals("Plant")) {
+            if (population.get(i).getSpeciesName().equals(PLANT_NAME)) {
                 int currentSize = population.get(i).getPopulationCount();
                 int maxCarry = population.get(i).getSpecies().getMaxCarry();
 
@@ -87,7 +88,7 @@ class Ecosystem {
                     // Add new plants up to growth rate or carrying capacity, whichever is smaller
                     for (int j = 0; j < growthRate && currentSize + j < maxCarry; j++) {
                         population.get(i).getAllCreatures()
-                                .add(new Creature(0, 5, 0, 0, null, "Plant", 100, population.get(i).getSpecies()));
+                                .add(new Creature(0, 5, 0, 0, null, PLANT_NAME, 100, population.get(i).getSpecies()));
                     }
                 }
             }
@@ -107,7 +108,7 @@ class Ecosystem {
         // Iterate through all populations in the ecosystem
         for (int i = 0; i < population.size(); i++) {
             // Skip plants; only predators hunt
-            if (!population.get(i).getSpeciesName().equals("Plant")) {
+            if (!population.get(i).getSpeciesName().equals(PLANT_NAME)) {
                 // Higher vision means higher chance of finding prey each generation
                 for (int j = 0; j < population.get(i).getPopulationCount(); j++) {
                     Creature predator = population.get(i).getAllCreatures().get(j);
