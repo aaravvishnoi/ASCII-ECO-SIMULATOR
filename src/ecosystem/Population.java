@@ -8,6 +8,7 @@ public class Population {
     private ArrayList<Creature> allCreatures;
     private Species species;
     private double mutationRate;
+    private static final String plantName = "Plant";
 
     public Population(Species species) {
         this(species, 0.3);
@@ -20,7 +21,7 @@ public class Population {
     }
 
     public void reproduce() {
-        if (species.getSpeciesName().equals("Plant")) {
+        if (species.getSpeciesName().equals(plantName)) {
             return;
         }
 

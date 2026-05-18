@@ -9,7 +9,7 @@ import java.util.*;
  * survival checks,
  * reproduction, and statistical tracking across generations.
  */
-class Ecosystem {
+public class Ecosystem {
     private static final String plantName = "Plant";
 
     // ArrayList to store all populations in the ecosystem
@@ -37,7 +37,7 @@ class Ecosystem {
     /**
      * Runs a single generation of the ecosystem simulation..
      */
-    void runGeneration(FileManager fm, int generation) {
+    public void runGeneration(FileManager fm, int generation) {
         plantGrowth(); // Plants grow up to carrying capacity
         String feedingSummary = feeding(); // Predators hunt and consume prey
         survivalCheck(); // Creatures lose health if unfed; weak creatures are culled
@@ -77,7 +77,7 @@ class Ecosystem {
      * Plants grow up to their carrying capacity, adding new plant creatures at a
      * fixed growth rate.
      */
-    void plantGrowth() {
+    public void plantGrowth() {
         // Iterate through all populations to find plant species
         for (int i = 0; i < population.size(); i++) {
             if (population.get(i).getSpeciesName().equals(plantName)) {
