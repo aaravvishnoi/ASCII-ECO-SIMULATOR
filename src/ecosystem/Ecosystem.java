@@ -225,7 +225,7 @@ class Ecosystem {
         Creature strongestCreature = null;
 
         for (int i = 0; i < population.size(); i++) {
-            if (population.get(i).getSpeciesName().equals("Plant")) {
+            if (population.get(i).getSpeciesName().equals(plantName)) {
                 continue;
             }
 
