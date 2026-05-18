@@ -9,22 +9,22 @@ class SimulationDriver {
             return;
         }
 
-        Species plantSpecies = new Species("Plant", "Producer", 4, 0, config.getCarryCapacity());
+        Species plantSpecies = new Species("Plant", 4, 0, config.getCarryCapacity());
         plantSpecies.setAsciiArt("      _.--'--._\n    .'. ':. ' :'.\n   '`' : `. `: ':'\n  : : '.'. .'.':.`:\n  :' -`= `+ .= - `:\n  :.' .'.' :.'.`:':\n   : : .:`' .:`.': \n    '.: . :`. :.' \n      `'--,--'`\n          y\n         ( \n          \\       _\n           \\    /`/\n     _      |__/:/_  \n     \\`\\    |\\ :  /\n     _\\::\\_  /\\ : /_\n     \\ : /_/\\  :  /\n     _\\ : /_/ : /`\n     \\  :  /.'/`\n jgs  `\\ :/'/``\n`^^`^`^``^^`^^^`^^`^^^`^");
         
-        Species wormSpecies = new Species("Worm", "Herbivore S", 5, 4, 20);
+        Species wormSpecies = new Species("Worm", 5, 4, 20);
         wormSpecies.setAsciiArt("                                                        /~~\\\n          ____                                         /'o  |\n        .~  | `\\             ,-~~~\\~-_               ,'  _/'|\n        `\\_/   /'\\         /'`\\    \\  ~,             |     .'\n            `,/'  |      ,'_   |   |   |`\\          ,'~~\\  |\n             |   /`:     |  `\\ /~~~~\\ /   |        ,'    `.'  \n             | /'  |     |   ,'      `\\  /`|      /'\\    /\n             `|   / \\_ _/ `\\ |         |'   `----\\   |  /'\n              `./'  | ~ |   ,'         |    |     |  |/'\n               `\\   |   /  ,'           `\\ /      |/~'\n                 `\\/_ /~ _/               `~------'\n                     ~~~~\n");
         
-        Species rabbitSpecies = new Species("Rabbit", "Herbivore L", 8, 6, 15);
+        Species rabbitSpecies = new Species("Rabbit", 8, 6, 15);
         rabbitSpecies.setAsciiArt("               /|      __\n             +      / |   ,-~ /             +\n     .              Y :|  //  /                .         *\n         .          | jj /( .^     *\n               *    >-\"~\"-v\"              .        *        .\n*                  /       Y\n   .     .        jo  o    |     .            +\n                 ( ~T~     j                     +     .\n      +           >._-' _./         +\n               /| ;-\"~ _  l\n  .           / l/ ,-\"~    \\     +\n              \\//\\/      .- \\\n       +       Y        /    Y\n               l       I     !\n               ]\\      _\\    /\"\\\n              (\" ~----( ~   Y.  )\n          ~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
         
-        Species foxSpecies = new Species("Fox", "Predator S", 10, 7, 10);
+        Species foxSpecies = new Species("Fox", 10, 7, 10);
         foxSpecies.setAsciiArt("   /|_/|\n  / ^ ^(_o\n /    __.' \n /     \\\\\n(_) (_) '._\n   '.__     '. .-''-'.\n     ( '.   ('.____.'' \n     _) )'_, )mrf\n    (__/ (__/\n");
         
-        Species wolfSpecies = new Species("Wolf", "Predator L", 12, 8, 8);
+        Species wolfSpecies = new Species("Wolf", 12, 8, 8);
         wolfSpecies.setAsciiArt("        _\n       / \\      _-'\n     _/|  \\-''- _ /\n__-' { |          \\\n    /             \\\n    /       \"o.  |o }\n    |            \\ ;\n                  ',\n       \\_         __\\\n         ''-_    \\./\\/ \n           / '-____'\n          /\n        _'\n      _-'\n");
         
-        Species eagleSpecies = new Species("Eagle", "Apex", 15, 9, 5);
+        Species eagleSpecies = new Species("Eagle", 15, 9, 5);
         eagleSpecies.setAsciiArt("       .   ,\n       '. '.  \\  \\\n      ._ '-.'. `\\  \\\n        '-._; .'; `-.''.  \n       `~-.; '.       '. \n        '--,`           '.\n           -='.          ;\n .--=~~=-,    -.;        ;\n .-=`;    `~,_.;        /\n `  ,-`'    .-;         |\n    .-~`.    .;         ;\n     .;.-   .-;         ,\\\n       `.'   ,=;     .-'  `~.-._\n        .';   .';  .'      .'   '-. \n          .\\  ;  ;        ,.' _  a',\n         .'~\";-`   ;      ;\"~` `'-=.)\n       .' .'   . _;  ;',  ;\n       '-.._ `~`.'  \\  ; ; :\n            `~'    _'\\_ \\_\n                  /=`^^=`\"\"/`)-.\n                  \\ =  _ =     =\\\n                   `\"\"` `~-. =   ; ");
 
         // Print ASCII art for all species
