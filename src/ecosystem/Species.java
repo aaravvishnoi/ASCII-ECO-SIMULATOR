@@ -16,7 +16,7 @@ public class Species {
     private ArrayList<String> preyList;
 
 
-    public Species(String speciesName, String foodChainRole, int maxAge, int hungerRate, int maxCarryingCapacity) {
+    public Species(String speciesName, int maxAge, int hungerRate, int maxCarryingCapacity) {
         this.speciesName = speciesName;
         this.maxAge = maxAge;
         this.hungerRate = hungerRate;
