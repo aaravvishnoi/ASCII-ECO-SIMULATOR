@@ -2,13 +2,11 @@ package ecosystem;
 
 import java.util.*;
 
-/**
- * Ecosystem class manages the simulation of an ecosystem containing multiple
- * populations of creatures.
- * It handles the lifecycle of the ecosystem including plant growth, feeding,
- * survival checks,
- * reproduction, and statistical tracking across generations.
- */
+// Ecosystem class manages the simulation of an ecosystem containing multiple
+// populations of creatures.
+// It handles the lifecycle of the ecosystem including plant growth, feeding,
+// survival checks,
+// reproduction, and statistical tracking across generations.
 public class Ecosystem {
     private static final String plantName = "Plant";
 
@@ -16,10 +14,8 @@ public class Ecosystem {
     private ArrayList<Population> population;
     private int plantGrowthRate;
 
-    /**
-     * Constructor for Ecosystem class.
-     * Initializes an empty ArrayList to store populations.
-     */
+    // Constructor for Ecosystem class.
+    // Initializes an empty ArrayList to store populations.
     public Ecosystem() {
         this.population = new ArrayList<>();
         this.plantGrowthRate = 5;
@@ -34,9 +30,7 @@ public class Ecosystem {
         population.add(p);
     }
 
-    /**
-     * Runs a single generation of the ecosystem simulation..
-     */
+    // Runs a single generation of the ecosystem simulation..
     public void runGeneration(FileManager fm, int generation) {
         plantGrowth(); // Plants grow up to carrying capacity
         String feedingSummary = feeding(); // Predators hunt and consume prey
@@ -72,11 +66,9 @@ public class Ecosystem {
         System.out.println("Generation " + generation + " complete... Total population: " + totalPopulationCount);
     }
 
-    /**
-     * Handles plant growth during each generation.
-     * Plants grow up to their carrying capacity, adding new plant creatures at a
-     * fixed growth rate.
-     */
+    // Handles plant growth during each generation.
+    // Plants grow up to their carrying capacity, adding new plant creatures at a
+    // fixed growth rate.
     public void plantGrowth() {
         // Iterate through all populations to find plant species
         for (int i = 0; i < population.size(); i++) {
@@ -219,7 +211,7 @@ public class Ecosystem {
     /**
      * Finds the strongest creature across all populations in the ecosystem.
      *
-     * @return the creature with the highest combat score, or null if no creatures exist
+     *  will return the creature with the highest combat score, or null if no creatures exist
      */
     public Creature findStrongestCreature() {
         Creature strongestCreature = null;
@@ -248,8 +240,8 @@ public class Ecosystem {
     /**
      * Finds a population in the ecosystem by species name.
      * 
-     * @param speciesName the name of the species to search for
-     * @return the Population object if found, null if no matching population exists
+     *  the name of the species to search for
+     * return  the Population object if found, null if no matching population exists
      */
     public Population findPopulation(String speciesName) {
         // Search through all populations for matching species name
@@ -265,7 +257,7 @@ public class Ecosystem {
     /**
      * Calculates the total number of creatures currently in the ecosystem.
      *
-     * @return total creature count across all populations
+     * will retunrn total creature count across all populations
      */
     private int getTotalPopulationCount() {
         int total = 0;

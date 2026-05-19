@@ -1,11 +1,11 @@
 **ASCII ECO SIMULATOR**
 What problems does your application solve?
 The Ecosystem Simulator is a text-based Java application that models a living, evolving ecosystem. The simulation runs autonomously across multiple generations. Each generation, creatures feed, compete, reproduce, and die, with their offspring inheriting mutated stats. Over time, natural selection drives the population to evolve.
-The simulation is non-interactive by design. The Driver class runs the ecosystem and prints detailed output to the console each generation, including ASCII art for each species, population statistics, and evolution logs. Results are stored in a file at the end.
+The simulation is non-interactive by design. The Driver class runs the ecosystem and prints detailed output to the console each generation, including ASCII art for each species, population statistics, and evolution logs. Results are stored in a file each generation.
 
 Description of the structure of your program
 
-Creature: Represents one individual animal. It stores creature metadata such as stats, parent reference, age, health, and ASCII art.
+Creature: Represents one individual animal. It stores creature metadata such as stats, parent reference, age, and health.
 
 Species: Defines species-wide properties. It includes base stats, species name, food chain role, and ASCII art template.
 
@@ -27,3 +27,10 @@ Compile with javac -cp lib/junit-4.13.2.jar src/ecosystem/*.java
 Run with java -cp src ecosystem.SimulationDriver
 Config can be adjusted in data/Input/config.txt
 Output log is written to data/Output/ecosystem_log.txt
+
+How to run tests
+
+Ensure Java and JUnit are installed
+Navigate to the project root folder in terminal
+Compile with javac -cp "src:lib/junit-4.13.2.jar" src/ecosystem/*.java test/*.java
+Run tests with java -cp "src:test:lib/junit-4.13.2.jar" org.junit.runner.JUnitCore test.EcosystemTests

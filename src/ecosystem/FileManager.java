@@ -54,7 +54,7 @@ public class FileManager {
 
         String filename = "ecosystem_log.txt";
 
-        // GUARANTEED: A File object has been opened that previously did not exist
+        // GURARENTEED: A File object has been opened that previously did not exist
         try {
             FileWriter writer = new FileWriter("data" + File.separator + "Output" + File.separator + filename,true);
 
